@@ -1,0 +1,10 @@
+INSTRUCTIONS HOW TO RUN THE EXPERIMENT:
+
+1) Download the project
+2) Install MySQL on your local machine. The experiment was conducted with version 5.7.17
+3) Open the Sql.txt file and execute one statement after the other from the file 
+   --- by the 'LOAD DATA LOCAL INFILE' command, use the right path for the input files!!!
+4) Open the DP3.R file and replace the USER_NAME AND PASSWORD variable with your database credentials (line 8 and 9)!
+5) Execute the R-script
+
+-- As a result you should get 3 html files and one csv file --

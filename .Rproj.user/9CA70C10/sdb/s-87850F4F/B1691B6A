@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1496410886494.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "B1691B6A",
+    "lastKnownWriteTime" : 4294967302,
+    "last_content_update" : 1496410886494,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "E9FCD9E2",
+        "caption" : "meanIncomePerDistrict",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=meanIncomePerDistrict&cache_key=E9FCD9E2",
+        "displayedObservations" : 23,
+        "environment" : "",
+        "object" : "meanIncomePerDistrict",
+        "preview" : 0,
+        "totalObservations" : 23,
+        "variables" : 1
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
