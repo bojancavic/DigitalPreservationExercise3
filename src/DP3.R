@@ -7,8 +7,8 @@ webshot::install_phantomjs()
 
 #Connection to database
 
-USER_NAME = 'root';
-PASSWORD = 'hallo123';
+USER_NAME = '';
+PASSWORD = '';
 
 mydb = dbConnect(MySQL(), user=USER_NAME, password=PASSWORD, dbname='dp3')
 
@@ -29,7 +29,7 @@ population = unlist(populationTotal, use.names = FALSE)
 
 Result = matrix(c(income, population), nrow = length(population), ncol = 4)
 colnames(Result) <- c("District", "Date", "Average_Income", "Population")
-write.csv(Result, file = "out/ResultData.csv",row.names=FALSE)
+write.csv(Result, file = "output/ResultData.csv",row.names=FALSE)
 
 
 ###### statistics ######
