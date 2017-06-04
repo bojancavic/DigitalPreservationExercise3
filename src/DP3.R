@@ -2,11 +2,13 @@
 library(plotly)
 library(RMySQL)
 library(formattable)
+library(webshot)
+webshot::install_phantomjs()
 
 #Connection to database
 
-USER_NAME = '';
-PASSWORD = '';
+USER_NAME = 'root';
+PASSWORD = 'hallo123';
 
 mydb = dbConnect(MySQL(), user=USER_NAME, password=PASSWORD, dbname='dp3')
 
@@ -27,7 +29,7 @@ population = unlist(populationTotal, use.names = FALSE)
 
 Result = matrix(c(income, population), nrow = length(population), ncol = 4)
 colnames(Result) <- c("District", "Date", "Average_Income", "Population")
-write.csv(Result, file = "ResultData.csv",row.names=FALSE)
+write.csv(Result, file = "out/ResultData.csv",row.names=FALSE)
 
 
 ###### statistics ######
@@ -79,7 +81,7 @@ p = plot_ly(data, x = ~Districts, y = ~meanPopulation, type = 'bar', name = 'Pop
   layout(yaxis = list(title = ''), barmode = 'group')
 
 ##output plot as html file
-htmlwidgets::saveWidget(as_widget(p), "meanIncomeMeanPopulation.html")
+export(p, "output/meanIncomeMeanPopulation.png")
 
 years = c(2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014)
 
@@ -94,7 +96,7 @@ p1 = plot_ly(dataMeanIncome, x=~years, y=~incomeOverYearFirstDistrict, name=past
          xaxis = list(title = 'Years'))
 
 ##output plot as html file
-htmlwidgets::saveWidget(as_widget(p1), "incomeComparison.html")
+export(p1, "output/incomeComparison.png")
 
 #Population comparison of first and 15 district
 p2 = plot_ly(dataMeanPopulation, x=~years, y=~populationOverYearFirstDistrict, name=paste("Population change in first district:", populationChangeFirstDistrict,"%", sep = " "), type = 'scatter', mode = 'lines')%>%
@@ -103,6 +105,6 @@ p2 = plot_ly(dataMeanPopulation, x=~years, y=~populationOverYearFirstDistrict, n
          yaxis = list(title = 'Population'),
          xaxis = list(title = 'Years'))
 
-##output plot as html file
-htmlwidgets::saveWidget(as_widget(p2), "populationComparison.html")
+##output plot as png file
+export(p2, "output/populationComparison.png")
 
